@@ -42,7 +42,7 @@ class PhotoWidget extends StatelessWidget {
                 final cubit = BlocProvider.of<PhotosCubit>(context);
                 (!photo.liked)
                     ? cubit.likePhoto(photo)
-                    : cubit.unlikePhoto(photo);
+                    : cubit.dislikePhoto(photo);
               },
             ),
           ),

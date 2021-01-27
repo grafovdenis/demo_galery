@@ -31,14 +31,14 @@ class PhotosCubit extends Cubit<PhotosState> {
     final _photo = _state.photos
         .firstWhere((element) => element.id == photo.id)
         .copyWith(liked: true);
-    emit(_state.replacePhoto(_photo.id, _photo));
+    emit(_state.replacePhoto(_photo.id, _photo, true));
   }
 
-  void unlikePhoto(Photo photo) async {
+  void dislikePhoto(Photo photo) async {
     final _state = state as PhotosLoadedState;
     final _photo = _state.photos
         .firstWhere((element) => element.id == photo.id)
         .copyWith(liked: false);
-    emit(_state.replacePhoto(_photo.id, _photo));
+    emit(_state.replacePhoto(_photo.id, _photo, false));
   }
 }

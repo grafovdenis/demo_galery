@@ -30,10 +30,10 @@ class PhotosLoadedState extends PhotosState {
     );
   }
 
-  PhotosLoadedState replacePhoto(int id, Photo newPhoto) {
+  PhotosLoadedState replacePhoto(int id, Photo newPhoto, bool like) {
     final index =
         this.photos.indexOf(photos.firstWhere((element) => element.id == id));
     this.photos[index] = newPhoto;
-    return this.copyWith(likes: this.likes + 1);
+    return this.copyWith(likes: (like) ? this.likes + 1 : this.likes - 1);
   }
 }

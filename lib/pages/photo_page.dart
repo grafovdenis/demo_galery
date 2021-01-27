@@ -34,7 +34,7 @@ class _PhotoPageState extends State<PhotoPage> {
               final cubit = BlocProvider.of<PhotosCubit>(context);
               (!liked)
                   ? cubit.likePhoto(widget.photo)
-                  : cubit.unlikePhoto(widget.photo);
+                  : cubit.dislikePhoto(widget.photo);
               setState(() {
                 liked = !liked;
               });
